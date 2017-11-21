@@ -1,0 +1,54 @@
+<div class="container">
+  <form class="form-horizontal" novalidate>
+    <div class="form-group">
+      <label class="col-xs-3 control-label">required</label>
+
+      <div class="col-xs-9">
+	This is a required field
+        <input class="form-control" type="text" ngModel name="requried" #requried="ngModel" required/>
+        <p class="alert alert-danger" *ngIf="requried?.errors?.required">required error</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+This is to demonstrate minimum length of 5
+     <label class="col-xs-3 control-label">minlength</label>
+
+      <div class="col-xs-9">
+        <input class="form-control" type="text" ngModel name="minlength" #minlength="ngModel" minlength="5"/>
+        <p class="alert alert-danger" *ngIf="minlength?.errors?.minlength">minlength error</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-xs-3 control-label">maxlength</label>
+
+      <div class="col-xs-9">
+This is to demonstrate maximum length of 8
+        <input class="form-control" type="text" ngModel name="maxlength" #maxlength="ngModel" maxlength="8"/>
+        <p class="alert alert-danger" *ngIf="maxlength?.errors?.maxlength">maxlength error</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-xs-3 control-label">pattern</label>
+
+      <div class="col-xs-9">
+This is to demonstrate pattern of only 6 alphabets
+        <input class="form-control" type="text" ngModel name="pattern" #pattern="ngModel" pattern="[a-z]{6}"/>
+        <p class="alert alert-danger" *ngIf="pattern?.errors?.pattern">pattern error</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-xs-3 control-label">email</label>
+
+      <div class="col-xs-9">
+This is to demonstrate email pattern
+        <input class="form-control" type="text" ngModel name="email" #email="ngModel" email/>
+        <p class="alert alert-danger" *ngIf="email?.errors?.email">email error</p>
+      </div>
+    </div>
+
+  </form>
+</div>
